@@ -5,12 +5,12 @@ const onPress=()=>{
     console.log('tes klik button')
 }
 
-export const ButtonLogin =()=>{
+export const ButtonLogin =(props)=>{
     return(
         <TouchableOpacity
-            onPress={onPress}
+            onPress={props.onPress}
             style={style.PrimaryBtnstyle}>
-            <Text style={style.textbtn}>Login</Text>
+            <Text style={style.textbtn}>{props.title}</Text>
         </TouchableOpacity>
     )
 }
@@ -26,6 +26,7 @@ const style=StyleSheet.create({
     },
     textbtn:{
         color:'white',
-        textAlign:'center'
+        textAlign:'center',
+        alignItems:'center'
     }
 })

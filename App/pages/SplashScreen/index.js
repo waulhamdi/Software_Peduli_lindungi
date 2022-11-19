@@ -2,7 +2,14 @@ import * as React from 'react';
 import { LogoBumn,LogoKemenkes, LogoKominfo, LogoText, LogoKpcpen } from '../../assets/image';
 import { StyleSheet, View, Text, Image } from 'react-native';
 
-export default SplashScreen = () => {
+export default SplashScreen = ({navigation}) => {
+
+    React.useEffect(() => {
+        setTimeout(() => {
+            navigation.replace('LoginScreen')
+        }, 3000)
+    },[navigation]);
+    
     return(
         <View style={style.Container}>
             <View style={style.LogoContainer}>
@@ -32,9 +39,9 @@ const style = StyleSheet.create({
         justifyContent:'center'
     },
     LogoMain:{
-        width:400,
-        height:200,
-        resizeMode:'center'
+        width:300,
+        height:70,
+        resizeMode:'stretch'
     },
     FootherText:{
         fontWeight:'bold',
